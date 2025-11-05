@@ -155,3 +155,12 @@ sudo systemctl status tv-player.service
 
 # Ver logs em tempo real
 sudo journalctl -u tv-player.service -f
+
+
+
+LINKS:
+
+https://www.raspberrypi.com/tutorials/how-to-use-a-raspberry-pi-in-kiosk-mode/
+https://www.raspberrypi.com/documentation/computers/getting-started.html#display
+https://forums.raspberrypi.com/viewtopic.php?t=389880
+
