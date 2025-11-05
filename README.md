@@ -1,7 +1,7 @@
 Projeto Raspberry URL Simples - Kiosk TV Player
 
 
-🛠️ Configuração do Script do Player
+#Configuração do Script do Player
 1. Criar e Configurar o Script
   sudo nano /home/senai/start_tv_player.sh
 
