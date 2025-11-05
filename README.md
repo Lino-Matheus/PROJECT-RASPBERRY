@@ -7,39 +7,41 @@ Projeto Raspberry URL Simples - Kiosk TV Player
 
 Cole o seguinte o conteudo
 
-  #!/bin/bash
-# start_tv_player.sh - Kiosk player para Chromium
-# URL padrão: https://172.16.52.16/tv
+ #!/bin/bash
+# start_tv_player.sh - TV Player automático no Raspberry
+# Autor: Matheus Lino
+# URL padrão: Azure Static Web App
 
-# Aguardar inicialização do ambiente gráfico e rede
+# Aguardar o sistema e a rede inicializarem
 sleep 8
 
-# Configurações do ambiente gráfico
+# Configurar ambiente gráfico
 export DISPLAY=:0
 export XAUTHORITY=/home/senai/.Xauthority
 
-# Desativar protetor de tela / economia de energia
+# Desativar protetor de tela e economia de energia
 xset s off
 xset -dpms
 xset s noblank
 
-# Esconder cursor após 0.5s de inatividade
+# Esconder cursor do mouse
 unclutter -idle 0.5 -root &
 
-# URL do player (página que contém as mídias)
-PAGE_URL="https://172.16.52.16/tv"
+# URL da página com as mídias
+PAGE_URL="https://green-coast-01c907b0f.3.azurestaticapps.net/display/5caaa41a-c151-46f5-3006-08de1adad66b"
 
-# Log
+# Arquivo de log
 LOGFILE="/home/senai/tv-player.log"
-echo "$(date): Iniciando TV Player - URL: $PAGE_URL" >> "$LOGFILE"
+echo "$(date): INICIANDO TV PLAYER - URL: $PAGE_URL" >> "$LOGFILE"
 
-# Esperar o servidor X estar pronto
+# Aguardar o ambiente gráfico X estar pronto
 while ! xset q > /dev/null 2>&1; do
   sleep 2
 done
 
-# Executar Chromium apenas uma vez (sem loop)
+# Iniciar o Chromium em modo kiosk (tela cheia)
 echo "$(date): Abrindo Chromium em modo kiosk..." >> "$LOGFILE"
+
 /usr/bin/chromium \
   --kiosk \
   --start-fullscreen \
