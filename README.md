@@ -28,7 +28,7 @@ xset s noblank
 unclutter -idle 0.5 -root &
 
 # URL da página com as mídias
-PAGE_URL="https://green-coast-01c907b0f.3.azurestaticapps.net/display/5caaa41a-c151-46f5-3006-08de1adad66b"
+PAGE_URL="URL DESEJADA"
 
 # Arquivo de log
 LOGFILE="/home/senai/tv-player.log"
